@@ -48,7 +48,7 @@ class pesertaController extends Controller
         $pesertas ->namaPeserta = $req->input('namaPeserta');
         $pesertas ->tempatLahir = $req->input('tempatLahir');
         $pesertas ->tglLahir = $req->input('tglLahir');
-        $pesertas ->gender = $req->input('gender');
+        $pesertas ->gender = $req->radio('gender');
         $pesertas ->alamat = $req->input('alamat');
         $pesertas ->pekerjaan = $req->input('pekerjaan');
         // echo $jadwal ->judul_ibadah;

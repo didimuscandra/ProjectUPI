@@ -18,7 +18,7 @@
           <div class="col-md-12">
             <input type="text" class="form-control" id="namaPeserta" placeholder="Masukkan Nama Peserta" name="namaPeserta" class="form-control form-control-line"> 
           </div>
-          <label for="tempatLahir" class="col-md-12">Tempat Lahir</label>
+          <br/><label for="tempatLahir" class="col-md-12">Tempat Lahir</label>
           <div class="col-md-12">
             <input type="text" class="form-control" id="tempatLahir" placeholder="Masukkan Tempat Lahir Peserta" name="tempatLahir" class="form-control form-control-line"> 
           </div>
@@ -28,7 +28,7 @@
           </div>
           <label for="gender" class="col-md-12">Gender</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="gender" placeholder="Masukkan Gender Peserta" name="gender" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="gender" placeholder="Masukkan gender Peserta" name="gender" class="form-control form-control-line"> 
           </div>
           <label for="alamat" class="col-md-12">Alamat</label>
           <div class="col-md-12">

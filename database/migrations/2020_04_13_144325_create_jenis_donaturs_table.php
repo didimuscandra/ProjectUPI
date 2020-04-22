@@ -14,7 +14,7 @@ class CreateJenisDonatursTable extends Migration
     public function up()
     {
         Schema::create('jenis_donaturs', function (Blueprint $table) {
-            $table->BigIncrements('id');
+            $table->BigIncrements('id_jenisDonatur');
             $table->String('jenisDonatur');
             $table->timestamps();
         });
