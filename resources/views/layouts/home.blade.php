@@ -92,7 +92,7 @@
                         <a href="/jenisdonatur" class="waves-effect"><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i><span class="hide-menu">Jenis Donatur</span></a>
                     </li>
                     <li>
-                        <a href="map-google.html" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i><span class="hide-menu">Donatur</span></a>
+                        <a href="/donatur" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i><span class="hide-menu">Donatur</span></a>
                     </li>
                     <li>
                         <a href="blank.html" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Perolehan</span></a>

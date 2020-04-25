@@ -36,3 +36,12 @@ Route::post('/peserta/create','pesertaController@create')->middleware('auth');
 Route::get('/peserta/delete/{id}','pesertaController@delete')->middleware('auth');
 Route::get('/peserta/edit/{id}','pesertaController@vedit')->middleware('auth');
 Route::post('/peserta/edit/{id}','pesertaController@edit')->middleware('auth');
+
+
+//Donatur
+Route::get('/donatur','donaturController@index')->middleware('auth');
+Route::get('/donatur/create','donaturController@vcreate')->middleware('auth');
+Route::post('/donatur/create','donaturController@create')->middleware('auth');
+Route::get('/donatur/delete/{id}','donaturController@delete')->middleware('auth');
+Route::get('/donatur/edit/{id}','donaturController@vedit')->middleware('auth');
+Route::post('/donatur/edit/{id}','donaturController@edit')->middleware('auth');

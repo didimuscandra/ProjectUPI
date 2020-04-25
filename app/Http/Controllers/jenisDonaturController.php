@@ -41,7 +41,6 @@ class jenisDonaturController extends Controller
     {
         $jenisdonaturs = JenisDonatur::Find($id);
         $jenisdonaturs ->jenisDonatur = $req->input('jenisDonatur');
-        // echo $jadwal ->judul_ibadah;
         $jenisdonaturs ->save();
         return redirect('/jenisdonatur');
     }

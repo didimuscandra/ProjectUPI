@@ -15,12 +15,12 @@ class CreateDonatursTable extends Migration
     {
         Schema::create('donaturs', function (Blueprint $table) {
             $table->BigIncrements('id');
-            $table->Integer('id_donatur');
-            $table->BigInteger('id_jenisDonatur')->references('id_jenisDonatur')->on('departments')->onDelete('restrict');
+            $table->Integer('jenis_donatur_id')->references('id')->on('jenis_donaturs')->onDelete('restrict');
             $table->string('nama_donatur');
             $table->string('alamat');
             $table->string('no_hp');
             $table->string('email');
+            $table->timestamps();
         });
     }
 
