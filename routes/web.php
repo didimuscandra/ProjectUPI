@@ -45,3 +45,12 @@ Route::post('/donatur/create','donaturController@create')->middleware('auth');
 Route::get('/donatur/delete/{id}','donaturController@delete')->middleware('auth');
 Route::get('/donatur/edit/{id}','donaturController@vedit')->middleware('auth');
 Route::post('/donatur/edit/{id}','donaturController@edit')->middleware('auth');
+
+
+//Kegiatan
+Route::get('/kegiatan','kegiatanController@index')->middleware('auth');
+Route::get('/kegiatan/create','kegiatanController@vcreate')->middleware('auth');
+Route::post('/kegiatan/create','kegiatanController@create')->middleware('auth');
+Route::get('/kegiatan/delete/{id}','kegiatanController@delete')->middleware('auth');
+Route::get('/kegiatan/edit/{id}','kegiatanController@vedit')->middleware('auth');
+Route::post('/kegiatan/edit/{id}','kegiatanController@edit')->middleware('auth');

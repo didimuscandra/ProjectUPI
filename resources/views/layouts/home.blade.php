@@ -83,7 +83,7 @@
                         <a href="/peserta" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Peserta</span></a>
                     </li>
                     <li>
-                        <a href="profile.html" class="waves-effect"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Kegiatan</span></a>
+                        <a href="/kegiatan" class="waves-effect"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Kegiatan</span></a>
                     </li>
                     <li>
                         <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Detail Kegiatan</span></a>
