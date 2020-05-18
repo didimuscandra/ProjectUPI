@@ -77,7 +77,7 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
                     <li style="padding: 10px 0 0;">
-                        <a href="index.html" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                        <a href="/dashboard" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li>
                         <a href="/peserta" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Peserta</span></a>
@@ -95,7 +95,10 @@
                         <a href="/donatur" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i><span class="hide-menu">Donatur</span></a>
                     </li>
                     <li>
-                        <a href="blank.html" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Perolehan</span></a>
+                        <a href="/perolehan" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Perolehan</span></a>
+                    </li>
+                    <li>
+                        <a href="/reports" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Laporan</span></a>
                     </li>
                 </ul>
             </div>

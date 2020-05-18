@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<a href="/donatur/create" class="btn btn-info" role="button">Tambahkan Donatur</a>
+<a href="/donatur/create" class="btn btn-info" role="button">Tambahkan Donatur</a> <a href="/donatur/pdf" class="btn btn-info" target="_blank" role="button">Cetak PDF</a>
 <br><br>
 <div class="row">
     <div class="col-sm-12">

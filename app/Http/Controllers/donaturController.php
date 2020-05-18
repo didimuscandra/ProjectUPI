@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\JenisDonatur;
 use App\Donatur;
+use PDF;
 
 use Illuminate\Http\Request;
 
@@ -68,5 +69,13 @@ class donaturController extends Controller
         $donaturs = Donatur::Find($id);
         $donaturs ->delete();
         return redirect()->back();
+    }
+
+    public function makeReport(Request $request){
+        $donaturs = Donatur::all();
+        $jenisdonaturs = JenisDonatur::all();
+ 
+    	$pdf = PDF::loadview('Donatur.pdf',['donaturs'=>$donaturs],['jenisdonaturs'=>$jenisdonaturs]);
+    	return $pdf->download('laporan-donatur-pdf');
     }
 }

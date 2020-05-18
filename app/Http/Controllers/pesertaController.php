@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Peserta;
+use PDF;
 
 class pesertaController extends Controller
 {
@@ -60,5 +61,12 @@ class pesertaController extends Controller
         $pesertas = Peserta::Find($id);
         $pesertas ->delete();
         return redirect()->back();
+    }
+
+    public function makeReport(Request $request){
+        $pesertas = Peserta::all();
+ 
+    	$pdf = PDF::loadview('Peserta.pdf',['pesertas'=>$pesertas]);
+    	return $pdf->download('laporan-peserta-pdf');
     }
 }

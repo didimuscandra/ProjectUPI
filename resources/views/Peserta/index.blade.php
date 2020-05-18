@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<a href="/peserta/create" class="btn btn-info" role="button">Tambahkan Peserta</a>
+<a href="/peserta/create" class="btn btn-info" role="button">Tambahkan Peserta</a> <a href="/peserta/pdf" class="btn btn-info" target="_blank" role="button">Cetak PDF</a>
 <br><br>
 <div class="row">
     <div class="col-sm-12">
@@ -16,7 +16,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nama Peserta</th>
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
@@ -29,7 +28,6 @@
                     <tbody>
                     @foreach($pesertas as $peserta)
                         <tr>
-                            <td>{{ $peserta->id }}</td>
                             <td>{{ $peserta->namaPeserta }}</td>
                             <td>{{ $peserta->tempatLahir }}</td>
                             <td>{{ $peserta->tglLahir }}</td>

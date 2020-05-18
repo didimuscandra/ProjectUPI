@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kegiatan;
+use PDF;
 
 class kegiatanController extends Controller
 {
@@ -56,5 +57,12 @@ class kegiatanController extends Controller
         $kegiatans = Kegiatan::Find($id);
         $kegiatans ->delete();
         return redirect()->back();
+    }
+
+    public function makeReport(Request $request){
+        $kegiatans = Kegiatan::all();
+ 
+    	$pdf = PDF::loadview('Kegiatan.pdf',['kegiatans'=>$kegiatans]);
+    	return $pdf->download('laporan-kegiatan-pdf');
     }
 }

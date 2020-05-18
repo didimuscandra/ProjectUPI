@@ -1,13 +1,14 @@
 @extends('layouts.home')
 @section('content')
+
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Kegiatan</h4> 
+        <h4 class="page-title">Laporan Kegiatan</h4> 
     </div>
 </div>
 
-<a href="/kegiatan/create" class="btn btn-info" role="button">Tambahkan Kegiatan</a> <a href="/kegiatan/pdf" class="btn btn-info" target="_blank" role="button">Cetak PDF</a>
-<br><br>
+<a href="/reports/pdf" class="btn btn-info" target="_blank" role="button">Cetak PDF</a>
+<br/><br/>
 <div class="row">
     <div class="col-sm-12">
         <div class="white-box">
@@ -21,7 +22,6 @@
                             <th>Tanggal Selesai</th>
                             <th>Tempat</th>
                             <th>Rencana Donasi</th>
-                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,9 +31,7 @@
                             <td>{{ $kegiatan->tgl_mulai }}</td>
                             <td>{{ $kegiatan->tgl_selesai }}</td>
                             <td>{{ $kegiatan->tempat }}</td>
-                            <td> {{ $kegiatan->rencana_donasi }}</td>
-                            <td><a href="kegiatan/delete/{{$kegiatan->id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
-                            <td><a href="kegiatan/edit/{{$kegiatan->id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                            <td>{{ $kegiatan->rencana_donasi }}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -41,7 +39,5 @@
             </div>
         </div>
     </div>
-</div>        
-@endsection()
-
-                        
+</div>   
+@endsection
