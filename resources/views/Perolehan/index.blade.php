@@ -6,38 +6,34 @@
     </div>
 </div>
 
-<a href="/perolehan/create" class="btn btn-info" role="button">Tambahkan Perolehan</a>
+<a href="/perolehan/create" class="btn btn-info" role="button">Tambahkan Perolehan</a> <a href="/perolehan/pdf" class="btn btn-info" target="_blank" role="button">Cetak PDF</a>
 <br><br>
 <div class="row">
     <div class="col-sm-12">
         <div class="white-box">
-            <center><h3 class="box-title">Daftar Donatur</h3></center>
+            <center><h3 class="box-title">Daftar Perolehan</h3></center>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Nama Donatur</th>
-                            <th>Nama Kegiatan</th>
+                            <th>Donatur</th>
+                            <th>Kegiatan</th>
                             <th>Tanggal Donasi</th>
-                            <th>Donasi Cash</th>
-                            <th>Donasi Barang</th>
-                            <th>Total Donasi</th>
+                            <th>Jenis Donasi</th>
+                            <th>Jumlah Donasi</th>
+                            <th>Nilai</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($perolehans as $perolehan)
                         <tr>
-                            @foreach($donaturs as $donatur)
-                            <td>{{ $donatur->nama_donatur }}</td>
-                            @endforeach
-                            @foreach($kegiatans as $kegiatan)
-                            <td>{{ $kegiatan->namaKegiatan }}</td>
-                            @endforeach
-                            <td>{{ $perolehans->tgl_donasi }}</td>
-                            <td>{{ $perolehans->donasi_cash }}</td>
-                            <td>{{ $perolehans->donasi_barang }}</td>
-                            <td>{{ $perolehans->total_donasi }}</td>
+                            <td>{{ $perolehan->nama_donatur }}</td>
+                            <td>{{ $perolehan->namaKegiatan }}</td>
+                            <td>{{ $perolehan->tgl_donasi }}</td>
+                            <td>{{ $perolehan->nama_donasi }}</td>
+                            <td>{{ $perolehan->jml_donasi }}</td>
+                            <td>@currency($perolehan->total_donasi)</td>
                             <td><a href="perolehan/delete/{{$perolehan->id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
                             <td><a href="perolehan/edit/{{$perolehan->id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                         </tr>

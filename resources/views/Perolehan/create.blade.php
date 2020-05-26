@@ -14,51 +14,76 @@
       <form action="/perolehan/create" method="post" class="form-horizontal form-material">
       {{ csrf_field() }}
         <div class="form-group">
-          <label class="col-sm-12">Nama Donatur</label>
+          <label class="col-sm-12">Donatur</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="jenis_donatur_id">
-              <option value="" disabled {{ old('donatur') ? '' : 'selected' }}>Pilih Nama Donatur</option>
-              @foreach($donaturs as $donatur)
-                <option value="{{$donatur->id}}" {{ old('jenis') ? 'selected' : '' }} >{{$donatur->nama_donatur}}</option>
+              <select class="form-control form-control-line" name="donatur_id">
+              <option value="" disabled {{ old('namaDona') ? '' : 'selected' }}>Pilih Donatur</option>
+              @foreach($donaturs as $namaDona)
+                <option value="{{$namaDona->id}}" {{ old('namaDona') ? 'selected' : '' }} >{{$namaDona->nama_donatur}}</option>
               @endforeach
               </select>
             </div>
         </div>
+        
         <div class="form-group">
-          <label class="col-sm-12">Nama Kegiatan</label>
+          <label class="col-sm-12">Kegiatan</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="jenis_donatur_id">
-              <option value="" disabled {{ old('kegiatan') ? '' : 'selected' }}>Pilih Nama Kegiatan</option>
-              @foreach($kegiatans as $kegiatan)
-                <option value="{{$kegiatan->id}}" {{ old('kegiatan') ? 'selected' : '' }} >{{$kegiatan->namaKegiatan}}</option>
+              <select class="form-control form-control-line" name="kegiatan_id">
+              <option value="" disabled {{ old('namaKegi') ? '' : 'selected' }}>Pilih Kegiatan</option>
+              @foreach($kegiatans as $namaKegi)
+                <option value="{{$namaKegi->id}}" {{ old('namaKegi') ? 'selected' : '' }} >{{$namaKegi->namaKegiatan}}</option>
               @endforeach
               </select>
             </div>
         </div>
+        
         <div class="form-group">
           <label for="tgl_donasi" class="col-md-12">Tanggal Donasi</label>
           <div class="col-md-12">
-            <input type="date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line"> 
+            <input type="Date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line"> 
           </div>
         </div>
+        
+        <!-- <div class="form-group">
+          <label class="col-sm-12">Jenis Donasi</label>
+            <div class="col-sm-12">
+              <select class="form-control form-control-line" name="user_selected">
+                <option value="" disabled selected>Pilih Jenis Donasi</option>
+                <option value="$donasi_cash->id" name="donasi_cash">Donasi Cash</option>
+                <option value="$donasi_barang->id" name="donasi_barang">Donasi Barang</option>
+              </select>
+            </div>
+        </div> -->
+
         <div class="form-group">
-          <label for="donasi_cash" class="col-md-12">Donasi Cash</label>
-          <div class="col-md-12">
-            <input type="number" class="form-control" id="donasi_cash" placeholder="" name="donasi_cash" class="form-control form-control-line"> 
-          </div>
+          <label for="jml_donasi" class="col-md-12">Jenis Donasi</label>
+            <div class="col-md-12">
+              <select class="form-control form-control-line" name="user_selected" onchange="cekJenis(this.value)">
+                <option value="A">Dollar</option>
+                <option value="B">Rupiah</option>
+                <option value="C">Mobil</option>
+                <option value="D">Motor</option>
+                <option value="E">Rumah</option>
+                <option value="F">Tanah</option>
+              </select>
+              <input type="Text" class="form-control" id="jml_donasi" placeholder="Masukkan Jumlah Donasi" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line" >  
+            </div>
         </div>
+
         <div class="form-group">
-          <label for="donasi_barang" class="col-md-12">Donasi Barang</label>
-          <div class="col-md-12">
-            <input type="number" class="form-control" id="donasi_barang" placeholder="" name="donasi_barang" class="form-control form-control-line"> 
-          </div>
+          <label for="nama_donasi" class="col-md-12">Nama Donasi</label>
+            <div class="col-md-12">
+              <input type="Text" class="form-control" id="nama_donasi" placeholder="Masukkan Nama Sesuai Jenis Donasi" name="nama_donasi" class="form-control form-control-line" >
+            </div>
         </div>
+        
         <div class="form-group">
           <label for="total_donasi" class="col-md-12">Total Donasi</label>
           <div class="col-md-12">
-            <input type="number" class="form-control" id="total_donasi" placeholder="" name="total_donasi" class="form-control form-control-line"> 
+            <input type="Text" class="form-control" id="total_donasi" placeholder="Masukkan Donasi Barang" name="total_donasi" class="form-control form-control-line"> 
           </div>
         </div>
+
         <div class="form-group">
           <div class="col-sm-12">
             <button type="submit" class="btn btn-success">Submit</button>
@@ -68,5 +93,26 @@
   </div>
 </div>
 @endsection()
+
+@section('footer')
+<script type="text/javascript">
+  var tmpJenis = "A";
+  var dollar = 14718; //Setting Nilai Tukar Dollar
+
+      function cekJenis(val){
+          tmpJenis = val;
+      }
+
+      function convertCash(val){
+        var cash = $(val).val();
+        if(tmpJenis == "A"){
+          hasil = cash * dollar;
+          $('#total_donasi').val(hasil);
+        }else{
+          $('#total_donasi').val(cash);
+        }   
+      }
+</script>
+@endsection
 
         

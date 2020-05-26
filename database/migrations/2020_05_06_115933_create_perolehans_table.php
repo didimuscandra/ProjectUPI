@@ -18,8 +18,8 @@ class CreatePerolehansTable extends Migration
             $table->Integer('donatur_id')->references('id')->on('donaturs')->onDelete('restrict');
             $table->Integer('kegiatan_id')->references('id')->on('kegiatans')->onDelete('restrict');
             $table->date('tgl_donasi');
-            $table->string('donasi_cash');
-            $table->string('donasi_barang');
+            $table->string('nama_donasi');
+            $table->string('jml_donasi');
             $table->string('total_donasi');
             $table->timestamps();
         });

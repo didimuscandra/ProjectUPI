@@ -138,6 +138,7 @@
     <script src="{{ asset ('js/custom.min.js') }}"></script>
     <script src="{{ asset ('js/dashboard1.js') }}"></script>
     <script src="{{ asset ('plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
+    @yield('footer')
 </body>
 
 </html>

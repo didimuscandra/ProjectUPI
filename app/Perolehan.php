@@ -6,21 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Perolehan extends Model
 {
-    public function namaDonatur(){
-        /**
-         *  return department which belongs to an employee.
-         *  first parameter is the model and second is a
-         *  foreign key.
-         */
-        return $this->hasMany(Donatur::class);
-    }
-
-    public function namaKegiatan(){
-        /**
-         *  return department which belongs to an employee.
-         *  first parameter is the model and second is a
-         *  foreign key.
-         */
-        return $this->hasMany(Kegiatan::class);
-    }
+    protected $primaryKey = 'id';
+    protected $table = 'perolehans';
+    public $timestamps = false;
+    
+    protected $fillable = [
+        'id',
+        'donatur_id',
+        'kegiatan_id',
+        'tgl_donasi',
+        'nama_donasi',
+        'jml_donasi',
+        'total_donasi'        
+    ];
 }

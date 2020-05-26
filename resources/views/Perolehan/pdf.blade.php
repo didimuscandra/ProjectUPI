@@ -24,25 +24,27 @@
   </head>
   <body>
     <div class="container">
-        <div><h2>DAFTAR DONATUR</h2></div>
+        <div><h2>DAFTAR PEROLEHAN</h2></div>
        <table id="example2" role="grid">
-       <thead>
+            <thead>
                         <tr>
-                            <th>Jenis Donatur</th>
-                            <th>Nama Donatur</th>
-                            <th>Alamat</th>
-                            <th>No HP</th>
-                            <th>Email</th>
+                            <th>Donatur</th>
+                            <th>Kegiatan</th>
+                            <th>Tanggal Donasi</th>
+                            <th>Jenis Donasi</th>
+                            <th>Jumlah Donasi</th>
+                            <th>Nilai</th>
                         </tr>
-                    </thead>
+            </thead>
             <tbody>
-            @foreach($donaturs as $donatur)
+                    @foreach($perolehans as $perolehan)
                         <tr role="row" class="odd">
-                            <td>{{$donatur->jenisDonatur}}</td>
-                            <td>{{ $donatur->nama_donatur }}</td>
-                            <td>{{ $donatur->alamat }}</td>
-                            <td>{{ $donatur->no_hp }}</td>
-                            <td>{{ $donatur->email }}</td>
+                            <td>{{ $perolehan->nama_donatur }}</td>
+                            <td>{{ $perolehan->namaKegiatan }}</td>
+                            <td>{{ $perolehan->tgl_donasi }}</td>
+                            <td>{{ $perolehan->nama_donasi }}</td>
+                            <td>{{ $perolehan->jml_donasi }}</td>
+                            <td>@currency($perolehan->total_donasi)</td>
                         </tr>
                     @endforeach
             </tbody>

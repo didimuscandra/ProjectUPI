@@ -27,10 +27,8 @@
                     <tbody>
                     @foreach($donaturs as $donatur)
                         <tr>
-                            @foreach($jenisdonaturs as $jendonatur)
-                            <td>{{ $jendonatur->jenisDonatur }}</td>
-                            @endforeach
-                            <td>{{ $donatur->nama_donatur }}</td>
+                            <td>{{$donatur->jenisDonatur}}</td>
+                            <td>{{$donatur->nama_donatur }}</td>
                             <td>{{ $donatur->alamat }}</td>
                             <td>{{ $donatur->no_hp }}</td>
                             <td>{{ $donatur->email }}</td>

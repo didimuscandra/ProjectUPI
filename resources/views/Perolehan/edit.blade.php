@@ -3,51 +3,87 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Donatur</h4> 
+        <h4 class="page-title">Perolehan</h4> 
     </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">  
     <div class="white-box">
-      <center><h3 class="box-title">Tambah Donatur</h3></center></br>   
-      <form action="/donatur/edit/{{$Donatur->id}}" method="post" class="form-horizontal form-material">
+      <center><h3 class="box-title">Edit Perolehan</h3></center></br>   
+      <form action="/perolehan/edit/{{$perolehans->id}}" method="post" class="form-horizontal form-material">
       {{ csrf_field() }}
         <div class="form-group">
-          <label class="col-sm-12">Jenis Donatur</label>
+          <label class="col-sm-12">Donatur</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="jenis_donatur_id">
-              <option value="" disabled {{ old('jenis') ? '' : 'selected' }}>Pilih Jenis Donatur</option>
-              @foreach($jenisdonaturs as $jenis)
-                <option value="{{$jenis->id}}" {{ old('jenis') ? 'selected' : '' }} >{{$jenis->jenisDonatur}}</option>
+              <select class="form-control form-control-line" name="donatur_id">
+              <option value="" disabled {{ old('namaDona') ? '' : 'selected' }}>Pilih Donatur</option>
+              @foreach($donaturs as $namaDona)
+                <option value="{{$namaDona->id}}" {{ old('namaDona') ? 'selected' : '' }} >{{$namaDona->nama_donatur}}</option>
               @endforeach
               </select>
             </div>
         </div>
+        
         <div class="form-group">
-          <label for="namaDonatur" class="col-md-12">Nama Donatur</label>
+          <label class="col-sm-12">Kegiatan</label>
+            <div class="col-sm-12">
+              <select class="form-control form-control-line" name="kegiatan_id">
+              <option value="" disabled {{ old('namaKegi') ? '' : 'selected' }}>Pilih Kegiatan</option>
+              @foreach($kegiatans as $namaKegi)
+                <option value="{{$namaKegi->id}}" {{ old('namaKegi') ? 'selected' : '' }} >{{$namaKegi->namaKegiatan}}</option>
+              @endforeach
+              </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="tgl_donasi" class="col-md-12">Tanggal Donasi</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="namaDonatur" placeholder="Masukkan Nama Donatur" name="nama_donatur" class="form-control form-control-line" value="{{$Donatur->nama_donatur}}"> 
+            <input type="Date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line" value="{{$perolehans->tgl_donasi}}"> 
           </div>
         </div>
+        
+        <!-- <div class="form-group">
+          <label class="col-sm-12">Jenis Donasi</label>
+            <div class="col-sm-12">
+              <select class="form-control form-control-line" name="user_selected">
+                <option value="" disabled selected>Pilih Jenis Donasi</option>
+                <option value="$donasi_cash->id" name="donasi_cash">Donasi Cash</option>
+                <option value="$donasi_barang->id" name="donasi_barang">Donasi Barang</option>
+              </select>
+            </div>
+        </div> -->
+
         <div class="form-group">
-          <label for="alamat" class="col-md-12">Alamat</label>
+          <label for="jml_donasi" class="col-md-12">Jenis Donasi</label>
+            <div class="col-md-12">
+              <select class="form-control form-control-line" name="user_selected" onchange="cekJenis(this.value)">
+                <option value="A">Dollar</option>
+                <option value="B">Rupiah</option>
+                <option value="C">Mobil</option>
+                <option value="D">Motor</option>
+                <option value="E">Rumah</option>
+                <option value="F">Tanah</option>
+              </select>
+              <input type="Text" class="form-control" id="jml_donasi" placeholder="Masukkan Jumlah Donasi" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line" value="{{$perolehans->jml_donasi}}">  
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nama_donasi" class="col-md-12">Nama Donasi</label>
+            <div class="col-md-12">
+              <input type="Text" class="form-control" id="nama_donasi" placeholder="Masukkan Nama Donasi" name="nama_donasi" class="form-control form-control-line" value="{{$perolehans->nama_donasi}}">
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="total_donasi" class="col-md-12">Total Donasi</label>
           <div class="col-md-12">
-          <textarea rows="5" class="form-control form-control-line" name="alamat">{{$Donatur->alamat}}</textarea>
+            <input type="Text" class="form-control" id="total_donasi" placeholder="Masukkan Donasi Barang" name="total_donasi" class="form-control form-control-line" value="{{$perolehans->total_donasi}}"> 
           </div>
         </div>
-        <div class="form-group">
-          <label for="no_hp" class="col-md-12">No HP</label>
-          <div class="col-md-12">
-            <input type="text" class="form-control" id="no_hp" placeholder="Masukkan No HP Donatur" name="no_hp" class="form-control form-control-line" value="{{$Donatur->no_hp}}"> 
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email" class="col-md-12">Email</label>
-          <div class="col-md-12">
-            <input type="text" class="form-control" id="email" placeholder="Masukkan Email Donatur" name="email" class="form-control form-control-line" value="{{$Donatur->email}}"> 
-          </div>
-        </div>
+
         <div class="form-group">
           <div class="col-sm-12">
             <button type="submit" class="btn btn-success">Submit</button>
@@ -57,5 +93,27 @@
   </div>
 </div>
 @endsection()
+
+@section('footer')
+<script type="text/javascript">
+  var tmpJenis = "A";
+  var dollar = 14718; //Setting Nilai Tukar Dollar
+
+      function cekJenis(val){
+          tmpJenis = val;
+      }
+
+      function convertCash(val){
+        var cash = $(val).val();
+        if(tmpJenis == "A"){
+          hasil = cash * dollar;
+          $('#total_donasi').val(hasil);
+          
+        }else{
+          $('#total_donasi').val(cash);
+        }   
+      }
+</script>
+@endsection
 
         

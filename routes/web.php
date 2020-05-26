@@ -63,10 +63,11 @@ Route::get('/kegiatan/pdf','kegiatanController@makeReport')->middleware('auth');
 //Perolehan
 Route::get('/perolehan','perolehanController@index')->middleware('auth');
 Route::get('/perolehan/create','perolehanController@vcreate')->middleware('auth');
-Route::post('/perolehan/create','perolehanController@create')->middleware('auth');
+Route::post('/perolehan/create','perolehanController@store')->middleware('auth');
 Route::get('/perolehan/delete/{id}','perolehanController@delete')->middleware('auth');
 Route::get('/perolehan/edit/{id}','perolehanController@vedit')->middleware('auth');
 Route::post('/perolehan/edit/{id}','perolehanController@edit')->middleware('auth');
+Route::get('/perolehan/pdf','perolehanController@makeReport')->middleware('auth');
 
 
 //Show Reports Kegiatan

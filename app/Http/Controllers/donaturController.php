@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\JenisDonatur;
 use App\Donatur;
 use PDF;
-
+use DB;
 use Illuminate\Http\Request;
 
 class donaturController extends Controller
@@ -16,9 +16,12 @@ class donaturController extends Controller
      */
     public function index()
     {
-        $donaturs = Donatur::all();
-        $jenisdonaturs = JenisDonatur::all();
-        return view('Donatur.index',array('donaturs' =>$donaturs, 'jenisdonaturs' =>$jenisdonaturs));
+        $donaturs = DB::Table('donaturs')
+                    ->join('jenis_donaturs','jenis_donaturs.id','=','donaturs.jenis_donatur_id')->get();
+        //$donaturs = Donatur::all();
+        //$jenisdonaturs = JenisDonatur::all(); 
+        //return view('Donatur.index',array('donaturs' =>$donaturs, 'jenisdonaturs' =>$jenisdonaturs));
+        return view('Donatur.index',[ 'donaturs' => $donaturs]);
     }
 
     public function vcreate()
@@ -28,6 +31,7 @@ class donaturController extends Controller
             'jenisdonaturs'  => $jenisdonaturs
         ]);
     }
+    
     public function create(Request $req)
     {
         
@@ -72,10 +76,10 @@ class donaturController extends Controller
     }
 
     public function makeReport(Request $request){
-        $donaturs = Donatur::all();
-        $jenisdonaturs = JenisDonatur::all();
+        $donaturs = DB::Table('donaturs')
+                    ->join('jenis_donaturs','jenis_donaturs.id','=','donaturs.jenis_donatur_id')->get();
  
-    	$pdf = PDF::loadview('Donatur.pdf',['donaturs'=>$donaturs],['jenisdonaturs'=>$jenisdonaturs]);
+    	$pdf = PDF::loadview('Donatur.pdf',['donaturs' => $donaturs]);
     	return $pdf->download('laporan-donatur-pdf');
     }
 }
