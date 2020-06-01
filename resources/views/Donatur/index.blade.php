@@ -32,8 +32,8 @@
                             <td>{{ $donatur->alamat }}</td>
                             <td>{{ $donatur->no_hp }}</td>
                             <td>{{ $donatur->email }}</td>
-                            <td><a href="donatur/delete/{{$donatur->id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
-                            <td><a href="donatur/edit/{{$donatur->id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                            <td><a href="donatur/delete/{{$donatur->donatur_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                            <td><a href="donatur/edit/{{$donatur->donatur_id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                         </tr>
                     @endforeach
                     </tbody>

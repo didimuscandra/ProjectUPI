@@ -17,10 +17,11 @@ class donaturController extends Controller
     public function index()
     {
         $donaturs = DB::Table('donaturs')
-                    ->join('jenis_donaturs','jenis_donaturs.id','=','donaturs.jenis_donatur_id')->get();
-        //$donaturs = Donatur::all();
-        //$jenisdonaturs = JenisDonatur::all(); 
-        //return view('Donatur.index',array('donaturs' =>$donaturs, 'jenisdonaturs' =>$jenisdonaturs));
+                    ->select('donaturs.id AS donatur_id', 'jenis_donaturs.id AS jenis_donatur_id', 'jenis_donaturs.jenisDonatur',
+                             'nama_donatur', 'alamat', 'no_hp', 'email')
+                    ->join('jenis_donaturs','jenis_donaturs.id','=','donaturs.jenis_donatur_id')
+                    ->get();
+
         return view('Donatur.index',[ 'donaturs' => $donaturs]);
     }
 

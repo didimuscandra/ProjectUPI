@@ -43,30 +43,21 @@
             <input type="Date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line"> 
           </div>
         </div>
-        
-        <!-- <div class="form-group">
-          <label class="col-sm-12">Jenis Donasi</label>
-            <div class="col-sm-12">
-              <select class="form-control form-control-line" name="user_selected">
-                <option value="" disabled selected>Pilih Jenis Donasi</option>
-                <option value="$donasi_cash->id" name="donasi_cash">Donasi Cash</option>
-                <option value="$donasi_barang->id" name="donasi_barang">Donasi Barang</option>
-              </select>
-            </div>
-        </div> -->
-
+         
         <div class="form-group">
           <label for="jml_donasi" class="col-md-12">Jenis Donasi</label>
             <div class="col-md-12">
               <select class="form-control form-control-line" name="user_selected" onchange="cekJenis(this.value)">
-                <option value="A">Dollar</option>
-                <option value="B">Rupiah</option>
+                <option value="A">Cash (Dollar)</option>
+                <option value="B">Cash (Rupiah)</option>
                 <option value="C">Mobil</option>
                 <option value="D">Motor</option>
                 <option value="E">Rumah</option>
                 <option value="F">Tanah</option>
               </select>
-              <input type="Text" class="form-control" id="jml_donasi" placeholder="Masukkan Jumlah Donasi" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line" >  
+              <div class="col-md-2">
+                <input type="number" class="form-control" id="jml_donasi" placeholder="" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line"> 
+              </div>  
             </div>
         </div>
 
@@ -79,8 +70,8 @@
         
         <div class="form-group">
           <label for="total_donasi" class="col-md-12">Total Donasi</label>
-          <div class="col-md-12">
-            <input type="Text" class="form-control" id="total_donasi" placeholder="Masukkan Donasi Barang" name="total_donasi" class="form-control form-control-line"> 
+          <div class="col-md-2">
+            <input type="number" class="form-control" id="total_donasi" placeholder="" name="total_donasi" class="form-control form-control-line"> 
           </div>
         </div>
 

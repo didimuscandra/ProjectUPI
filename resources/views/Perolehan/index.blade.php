@@ -34,8 +34,8 @@
                             <td>{{ $perolehan->nama_donasi }}</td>
                             <td>{{ $perolehan->jml_donasi }}</td>
                             <td>@currency($perolehan->total_donasi)</td>
-                            <td><a href="perolehan/delete/{{$perolehan->id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
-                            <td><a href="perolehan/edit/{{$perolehan->id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                            <td><a href="perolehan/delete/{{$perolehan->perolehan_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                            <td><a href="perolehan/edit/{{$perolehan->perolehan_id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                         </tr>
                     @endforeach
                     </tbody>

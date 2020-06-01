@@ -23,10 +23,12 @@ class perolehanController extends Controller
     {
         $this->perolehan = $perolehans;
     }
-
     public function index()
     {
         $perolehans = DB::Table('perolehans')
+                    ->select('perolehans.id AS perolehan_id', 'donaturs.id AS donatur_id', 'donaturs.nama_donatur', 
+                             'kegiatans.id AS kegiatan_id', 'kegiatans.namaKegiatan',
+                             'tgl_donasi', 'nama_donasi', 'jml_donasi', 'total_donasi')
                     ->join('donaturs','donaturs.id','=','perolehans.donatur_id')
                     ->join('kegiatans','kegiatans.id','=','perolehans.kegiatan_id')
                     ->get();
@@ -38,13 +40,11 @@ class perolehanController extends Controller
     {
         $data = $req->all();
         $this->perolehan->create($data);
-        // return $this->sendResponse([], 'Created Successfully');
         return redirect('/perolehan');
     }
 
     public function vcreate()
     {
-        //return view('Perolehan.create');
         $donaturs = Donatur::orderBy('nama_donatur','asc')->get();
         $kegiatans = Kegiatan::orderBy('namaKegiatan','asc')->get();
             return view('Perolehan.create')->with([
@@ -67,24 +67,29 @@ class perolehanController extends Controller
     public function edit(Request $req, $id )
     {
         $perolehans = Perolehan::Find($id);
-        $perolehans ->donatur_id = $req->input('donatur_id');
+        $perolehans->update($req->all());
+        
+        /*$perolehans ->donatur_id = $req->input('donatur_id');
         $perolahans ->kegiatan_id = $req->input('kegiatan_id');
         $perolehans ->tgl_donasi = $req->input('tgl_donasi');
         $perolehans ->nama_donasi = $req->input('nama_donasi');
         $perolehans ->jml_donasi = $req->input('jml_donasi');
         $perolehans ->total_donasi = $req->input('total_donasi');
-        $perolehans ->save();
+        $perolehans ->save();*/
         return redirect('/perolehan')->with('info','Perolehan Telah Diedit!');
     }
     public function delete($id)
     {
         $perolehans = Perolehan::Find($id);
-        $perolehans ->delete();
+        $perolehans -> delete();
         return redirect()->back();
     }
 
     public function makeReport(Request $request){
         $perolehans = DB::Table('perolehans')
+                    ->select('perolehans.id AS perolehan_id', 'donaturs.id AS donatur_id', 'donaturs.nama_donatur', 
+                             'kegiatans.id AS kegiatan_id', 'kegiatans.namaKegiatan',
+                             'tgl_donasi', 'nama_donasi', 'jml_donasi', 'total_donasi')
                     ->join('donaturs','donaturs.id','=','perolehans.donatur_id')
                     ->join('kegiatans','kegiatans.id','=','perolehans.kegiatan_id')
                     ->get();

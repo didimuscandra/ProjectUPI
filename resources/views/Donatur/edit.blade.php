@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col-sm-12">  
     <div class="white-box">
-      <center><h3 class="box-title">Tambah Donatur</h3></center></br>   
+      <center><h3 class="box-title">Edit Donatur</h3></center></br>   
       <form action="/donatur/edit/{{$Donatur->id}}" method="post" class="form-horizontal form-material">
       {{ csrf_field() }}
         <div class="form-group">

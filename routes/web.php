@@ -69,6 +69,15 @@ Route::get('/perolehan/edit/{id}','perolehanController@vedit')->middleware('auth
 Route::post('/perolehan/edit/{id}','perolehanController@edit')->middleware('auth');
 Route::get('/perolehan/pdf','perolehanController@makeReport')->middleware('auth');
 
+//Detail Kegiatan
+Route::get('/detailkegiatan','detailKegiatanController@index')->middleware('auth');
+Route::get('/detailkegiatan/create','detailKegiatanController@vcreate')->middleware('auth');
+Route::post('/detailkegiatan/create','detailKegiatanController@create')->middleware('auth');
+Route::get('/detailkegiatan/delete/{id}','detailKegiatanController@delete')->middleware('auth');
+Route::get('/detailkegiatan/edit/{id}','detailKegiatanController@vedit')->middleware('auth');
+Route::post('/detailkegiatan/edit/{id}','detailKegiatanController@edit')->middleware('auth');
+Route::get('/detailkegiatan/pdf','detailKegiatanController@makeReport')->middleware('auth');
+
 
 //Show Reports Kegiatan
 Route::get('/reports','reportKegiatanController@index')->name('report.index');

@@ -4,7 +4,7 @@
 <br/><br/>
 <div class="row">
                     <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="white-box">
                             <div class="col-in row">
                                 <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="linea-icon linea-basic"></i>
@@ -21,7 +21,7 @@
                     </div>
                     <!-- /.col -->
                     <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="white-box">
                             <div class="col-in row">
                                 <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
@@ -36,15 +36,16 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.col -->
-                    <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                </div>
+                <div class="row">
+                    <div class="col-md-13">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="white-box">
                             <div class="col-in row">
                                 <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
                                     <h5 class="text-muted vb">TOTAL DONASI</h5> </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <h3 class="counter text-right m-t-15 text-primary">157</h3> </div>
+                                    <h3 class="counter text-right m-t-15 text-primary">{{$perolehans}}</h3> </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only">40% Complete (success)</span> </div>
@@ -53,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.col -->
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -71,4 +72,12 @@
                         </div>
                     </div>
                 </div>
+@endsection()
+
+
+
+@section('footer')
+
+
+
 @endsection()

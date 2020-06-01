@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset ('img/logo-small.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset ('img/UKDW.png') }}">
     <title>UPI - Unit Pengembangan Institusi</title>
     
     <!-- Bootstrap Core CSS -->
@@ -36,7 +36,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-                <div class="top-left-part"><a class="logo" href="/home"><b><img src="{{ asset ('plugins/images/pixeladmin-logo.png') }}" alt="home" /></b><span class="hidden-xs"><img src="{{ asset ('plugins/images/pixeladmin-text.png') }}" alt="home" /></span></a></div>
+                <div class="top-left-part"><a class="logo" href="/dashboard"><b><img src="{{ asset ('plugins/images/LOGO-UKDW-WEB-2018.png') }}" width="300%" alt="home" /></b></a></div>
                 
                 <ul class="nav navbar-top-links navbar-right pull-right">
                 @guest
@@ -86,7 +86,7 @@
                         <a href="/kegiatan" class="waves-effect"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Kegiatan</span></a>
                     </li>
                     <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Detail Kegiatan</span></a>
+                        <a href="/detailkegiatan" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Detail Kegiatan</span></a>
                     </li>
                     <li>
                         <a href="/jenisdonatur" class="waves-effect"><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i><span class="hide-menu">Jenis Donatur</span></a>
@@ -107,7 +107,7 @@
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
-        
+
             @yield('content')
 
             </div>

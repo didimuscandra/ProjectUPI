@@ -39,8 +39,8 @@
         </div>
         <div class="form-group">
           <label for="rencana_donasi" class="col-md-12">Rencana Donasi</label>
-          <div class="col-md-12">
-            <input type="text" class="form-control" id="rencana_donasi" placeholder="Masukkan Rencana Donasi" name="rencana_donasi" class="form-control form-control-line"> 
+          <div class="col-md-2">
+            <input type="number" class="form-control" id="rencana_donasi" placeholder="" name="rencana_donasi" class="form-control form-control-line"> 
           </div>
         </div>
         <div class="form-group">

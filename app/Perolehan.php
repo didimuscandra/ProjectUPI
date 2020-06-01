@@ -8,7 +8,6 @@ class Perolehan extends Model
 {
     protected $primaryKey = 'id';
     protected $table = 'perolehans';
-    public $timestamps = false;
     
     protected $fillable = [
         'id',
