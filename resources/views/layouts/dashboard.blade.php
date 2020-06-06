@@ -60,14 +60,6 @@
                     <div class="col-md-12">
                         <div class="white-box">
                             <h3 class="box-title">Grafik Donasi</h3>
-                            <ul class="list-inline text-right">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #dadada;"></i>Site A View</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #aec9cb;"></i>Site B View</h5>
-                                </li>
-                            </ul>
                             <div id="morris-area-chart2" style="height: 370px;"></div>
                         </div>
                     </div>
@@ -77,7 +69,42 @@
 
 
 @section('footer')
+<script type="text/javascript">
+var grafik = <?php echo json_encode($grafik); ?>
 
+    $(document).ready(function() {
+        //iyaa sama2
+        Morris.Area({
+            element: 'morris-area-chart2',
+            data: grafik,
+            xkey: 'period',
+            ykeys: ['SiteA'],
+            labels: ['Total Donasi'],
+            pointSize: 0,
+            fillOpacity: 0.7,
+            pointStrokeColors: ['#ccc', '#cbb2ae'],
+            behaveLikeLine: true,
+            gridLineColor: '#e0e0e0',
+            lineWidth: 0,
+            smooth: false,
+            hideHover: 'auto',
+            parseTime : false,
+            lineColors: ['#ccc', '#cbb2ae'],
+            resize: true
+
+        });
+
+
+
+        $(".counter").counterUp({
+            delay: 100,
+            time: 1200
+        });
+
+    });
+
+
+</script>
 
 
 @endsection()

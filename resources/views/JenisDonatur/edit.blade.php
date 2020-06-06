@@ -16,7 +16,7 @@
         <div class="form-group">
           <label for="judul" class="col-md-12">Jenis Donatur</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="jenisDonatur" placeholder="Masukkan Jenis Donatur" name="jenisDonatur" class="form-control form-control-line" value="{{$JenisDonatur->jenisDonatur}}"> 
+            <input type="text" class="form-control" id="jenisDonatur" placeholder="Masukkan Jenis Donatur" name="jenisDonatur" class="form-control form-control-line" value="{{$JenisDonatur->jenisDonatur}}" required> 
           </div>
         </div>
         <div class="form-group">

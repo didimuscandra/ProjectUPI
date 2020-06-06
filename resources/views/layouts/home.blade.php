@@ -97,9 +97,6 @@
                     <li>
                         <a href="/perolehan" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Perolehan</span></a>
                     </li>
-                    <li>
-                        <a href="/reports" class="waves-effect"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i><span class="hide-menu">Laporan</span></a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -136,9 +133,10 @@
     <script src="{{ asset ('plugins/bower_components/morrisjs/morris.js') }}"></script>
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset ('js/custom.min.js') }}"></script>
-    <script src="{{ asset ('js/dashboard1.js') }}"></script>
+    
     <script src="{{ asset ('plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
     @yield('footer')
+    <script src="{{ asset ('js/dashboard1.js') }}"></script>
 </body>
 
 </html>

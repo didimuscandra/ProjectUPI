@@ -16,31 +16,31 @@
         <div class="form-group">
           <label for="namaKegiatan" class="col-md-12">Nama Kegiatan</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="namaKegiatan" placeholder="Masukkan Nama Kegiatan" name="namaKegiatan" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="namaKegiatan" placeholder="Masukkan Nama Kegiatan" name="namaKegiatan" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="tgl_mulai" class="col-md-12">Tanggal Mulai</label>
           <div class="col-md-12">
-            <input type="Date" class="form-control" id="tgl_mulai" placeholder="Masukkan Tanggal Mulai" name="tgl_mulai" class="form-control form-control-line"> 
+            <input type="Date" class="form-control" id="tgl_mulai" placeholder="Masukkan Tanggal Mulai" name="tgl_mulai" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="tgl_selesai" class="col-md-12">Tanggal Selesai</label>
           <div class="col-md-12">
-            <input type="date" class="form-control" id="tgl_selesai" placeholder="Masukkan Tanggal Mulai" name="tgl_selesai" class="form-control form-control-line"> 
+            <input type="date" class="form-control" id="tgl_selesai" placeholder="Masukkan Tanggal Mulai" name="tgl_selesai" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="tempat" class="col-md-12">Tempat Pelaksanaan</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="tempat" placeholder="Masukkan Tempat Pelaksanaan" name="tempat" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="tempat" placeholder="Masukkan Tempat Pelaksanaan" name="tempat" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="rencana_donasi" class="col-md-12">Rencana Donasi</label>
           <div class="col-md-2">
-            <input type="number" class="form-control" id="rencana_donasi" placeholder="" name="rencana_donasi" class="form-control form-control-line"> 
+            <input type="number" class="form-control" id="rencana_donasi" placeholder="" name="rencana_donasi" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">

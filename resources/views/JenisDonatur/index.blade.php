@@ -16,7 +16,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Jenis Donatur</th>
                             <th colspan="2">Action</th>
                         </tr>
@@ -24,7 +23,6 @@
                     <tbody>
                     @foreach($jenisdonaturs as $jenis)
                         <tr>
-                            <td>{{ $jenis->id }}</td>
                             <td>{{ $jenis->jenisDonatur }}</td>
                             <td><a href="jenisdonatur/delete/{{$jenis->id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
                             <td><a href="jenisdonatur/edit/{{$jenis->id}}"><button type="button" class="btn btn-warning">Edit</button></a></td>

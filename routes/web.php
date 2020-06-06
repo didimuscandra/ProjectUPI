@@ -77,10 +77,3 @@ Route::get('/detailkegiatan/delete/{id}','detailKegiatanController@delete')->mid
 Route::get('/detailkegiatan/edit/{id}','detailKegiatanController@vedit')->middleware('auth');
 Route::post('/detailkegiatan/edit/{id}','detailKegiatanController@edit')->middleware('auth');
 Route::get('/detailkegiatan/pdf','detailKegiatanController@makeReport')->middleware('auth');
-
-
-//Show Reports Kegiatan
-Route::get('/reports','reportKegiatanController@index')->name('report.index');
-
-//Generate PDF Kegiatan
-Route::get('/reports/pdf','reportKegiatanController@makeReport')->name('report.make');

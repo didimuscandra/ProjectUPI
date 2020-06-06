@@ -25,6 +25,7 @@ class perolehanController extends Controller
     }
     public function index()
     {
+        
         $perolehans = DB::Table('perolehans')
                     ->select('perolehans.id AS perolehan_id', 'donaturs.id AS donatur_id', 'donaturs.nama_donatur', 
                              'kegiatans.id AS kegiatan_id', 'kegiatans.namaKegiatan',

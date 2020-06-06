@@ -16,7 +16,7 @@
         <div class="form-group">
           <label class="col-sm-12">Donatur</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="donatur_id">
+              <select class="form-control form-control-line" name="donatur_id" required>
               <option value="" disabled {{ old('namaDona') ? '' : 'selected' }}>Pilih Donatur</option>
               @foreach($donaturs as $namaDona)
                 <option value="{{$namaDona->id}}" {{ old('namaDona') ? 'selected' : '' }} >{{$namaDona->nama_donatur}}</option>
@@ -28,7 +28,7 @@
         <div class="form-group">
           <label class="col-sm-12">Kegiatan</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="kegiatan_id">
+              <select class="form-control form-control-line" name="kegiatan_id" required>
               <option value="" disabled {{ old('namaKegi') ? '' : 'selected' }}>Pilih Kegiatan</option>
               @foreach($kegiatans as $namaKegi)
                 <option value="{{$namaKegi->id}}" {{ old('namaKegi') ? 'selected' : '' }} >{{$namaKegi->namaKegiatan}}</option>
@@ -40,14 +40,14 @@
         <div class="form-group">
           <label for="tgl_donasi" class="col-md-12">Tanggal Donasi</label>
           <div class="col-md-12">
-            <input type="Date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line"> 
+            <input type="Date" class="form-control" id="tgl_donasi" placeholder="Masukkan Tanggal Donasi" name="tgl_donasi" class="form-control form-control-line" required> 
           </div>
         </div>
          
         <div class="form-group">
           <label for="jml_donasi" class="col-md-12">Jenis Donasi</label>
             <div class="col-md-12">
-              <select class="form-control form-control-line" name="user_selected" onchange="cekJenis(this.value)">
+              <select class="form-control form-control-line" name="user_selected" onchange="cekJenis(this.value)" required>
                 <option value="A">Cash (Dollar)</option>
                 <option value="B">Cash (Rupiah)</option>
                 <option value="C">Mobil</option>
@@ -56,7 +56,7 @@
                 <option value="F">Tanah</option>
               </select>
               <div class="col-md-2">
-                <input type="number" class="form-control" id="jml_donasi" placeholder="" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line"> 
+                <input type="number" class="form-control" id="jml_donasi" placeholder="" onkeyup="convertCash(this)" name="jml_donasi" class="form-control form-control-line" required> 
               </div>  
             </div>
         </div>
@@ -64,14 +64,14 @@
         <div class="form-group">
           <label for="nama_donasi" class="col-md-12">Nama Donasi</label>
             <div class="col-md-12">
-              <input type="Text" class="form-control" id="nama_donasi" placeholder="Masukkan Nama Sesuai Jenis Donasi" name="nama_donasi" class="form-control form-control-line" >
+              <input type="Text" class="form-control" id="nama_donasi" placeholder="Masukkan Nama Sesuai Jenis Donasi" name="nama_donasi" class="form-control form-control-line" required >
             </div>
         </div>
         
         <div class="form-group">
           <label for="total_donasi" class="col-md-12">Total Donasi</label>
           <div class="col-md-2">
-            <input type="number" class="form-control" id="total_donasi" placeholder="" name="total_donasi" class="form-control form-control-line"> 
+            <input type="number" class="form-control" id="total_donasi" placeholder="" name="total_donasi" class="form-control form-control-line" required> 
           </div>
         </div>
 

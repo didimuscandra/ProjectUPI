@@ -16,37 +16,40 @@
         <div class="form-group">
           <label for="namaPeserta" class="col-md-12">Nama Peserta</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="namaPeserta" placeholder="Masukkan Nama Peserta" name="namaPeserta" class="form-control form-control-line" value="{{$Peserta->namaPeserta}}">  
+            <input type="text" class="form-control" id="namaPeserta" placeholder="Masukkan Nama Peserta" name="namaPeserta" class="form-control form-control-line" value="{{$Peserta->namaPeserta}}" required>  
           </div>
         </div>
         <div class="form-group">
           <label for="tempatLahir" class="col-md-12">Tempat Lahir</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="tempatLahir" placeholder="Masukkan Tempat Lahir Peserta" name="tempatLahir" class="form-control form-control-line" value="{{$Peserta->tempatLahir}}"> 
+            <input type="text" class="form-control" id="tempatLahir" placeholder="Masukkan Tempat Lahir Peserta" name="tempatLahir" class="form-control form-control-line" value="{{$Peserta->tempatLahir}}" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="tglLahir" class="col-md-12">Tanggal Lahir</label>
           <div class="col-md-12">
-            <input type="date" class="form-control" id="tglLahir" placeholder="Masukkan Tanggal Lahir Peserta" name="tglLahir" class="form-control form-control-line" value="{{$Peserta->tglLahir}}"> 
+            <input type="date" class="form-control" id="tglLahir" placeholder="Masukkan Tanggal Lahir Peserta" name="tglLahir" class="form-control form-control-line" value="{{$Peserta->tglLahir}}" required> 
           </div>
         </div>
         <div class="form-group">
-          <label for="gender" class="col-md-12">Gender</label>
-          <div class="col-md-12">
-            <input type="text" class="form-control" id="gender" placeholder="Masukkan Gender Peserta" name="gender" class="form-control form-control-line" value="{{$Peserta->gender}}"> 
+          <label for="gender" class="col-md-12">Pilih Jenis Kelamin</label>
+          <div class="col-md-2">
+            <select class="form-control form-control-line" name="gender" required>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
           <label for="alamat" class="col-md-12">Alamat</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Peserta" name="alamat" class="form-control form-control-line" value="{{$Peserta->alamat}}"> 
+            <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Peserta" name="alamat" class="form-control form-control-line" value="{{$Peserta->alamat}}" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="pekerjaan" class="col-md-12">Pekerjaan</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="pekerjaan" placeholder="Masukkan Pekerjaan Peserta" name="pekerjaan" class="form-control form-control-line" value="{{$Peserta->pekerjaan}}"> 
+            <input type="text" class="form-control" id="pekerjaan" placeholder="Masukkan Pekerjaan Peserta" name="pekerjaan" class="form-control form-control-line" value="{{$Peserta->pekerjaan}}" required> 
           </div>
         </div>
         <div class="form-group">

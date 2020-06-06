@@ -16,7 +16,7 @@
         <div class="form-group">
           <label class="col-sm-12">Jenis Donatur</label>
             <div class="col-sm-12">
-              <select class="form-control form-control-line" name="jenis_donatur_id">
+              <select class="form-control form-control-line" name="jenis_donatur_id" required>
               <option value="" disabled {{ old('jenis') ? '' : 'selected' }}>Pilih Jenis Donatur</option>
               @foreach($jenisdonaturs as $jenis)
                 <option value="{{$jenis->id}}" {{ old('jenis') ? 'selected' : '' }} >{{$jenis->jenisDonatur}}</option>
@@ -27,7 +27,7 @@
         <div class="form-group">
           <label for="namaDonatur" class="col-md-12">Nama Donatur</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="namaDonatur" placeholder="Masukkan Nama Donatur" name="nama_donatur" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="namaDonatur" placeholder="Masukkan Nama Donatur" name="nama_donatur" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
@@ -39,13 +39,13 @@
         <div class="form-group">
           <label for="no_hp" class="col-md-12">No HP</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="no_hp" placeholder="Masukkan No HP Donatur" name="no_hp" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="no_hp" placeholder="Masukkan No HP Donatur" name="no_hp" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="email" class="col-md-12">Email</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="email" placeholder="Masukkan Email Donatur" name="email" class="form-control form-control-line"> 
+            <input type="text" class="form-control" id="email" placeholder="Masukkan Email Donatur" name="email" class="form-control form-control-line" required> 
           </div>
         </div>
         <div class="form-group">

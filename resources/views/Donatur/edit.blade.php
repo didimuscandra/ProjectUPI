@@ -27,7 +27,7 @@
         <div class="form-group">
           <label for="namaDonatur" class="col-md-12">Nama Donatur</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="namaDonatur" placeholder="Masukkan Nama Donatur" name="nama_donatur" class="form-control form-control-line" value="{{$Donatur->nama_donatur}}"> 
+            <input type="text" class="form-control" id="namaDonatur" placeholder="Masukkan Nama Donatur" name="nama_donatur" class="form-control form-control-line" value="{{$Donatur->nama_donatur}}" required> 
           </div>
         </div>
         <div class="form-group">
@@ -39,13 +39,13 @@
         <div class="form-group">
           <label for="no_hp" class="col-md-12">No HP</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="no_hp" placeholder="Masukkan No HP Donatur" name="no_hp" class="form-control form-control-line" value="{{$Donatur->no_hp}}"> 
+            <input type="text" class="form-control" id="no_hp" placeholder="Masukkan No HP Donatur" name="no_hp" class="form-control form-control-line" value="{{$Donatur->no_hp}}" required> 
           </div>
         </div>
         <div class="form-group">
           <label for="email" class="col-md-12">Email</label>
           <div class="col-md-12">
-            <input type="text" class="form-control" id="email" placeholder="Masukkan Email Donatur" name="email" class="form-control form-control-line" value="{{$Donatur->email}}"> 
+            <input type="text" class="form-control" id="email" placeholder="Masukkan Email Donatur" name="email" class="form-control form-control-line" value="{{$Donatur->email}}" required> 
           </div>
         </div>
         <div class="form-group">

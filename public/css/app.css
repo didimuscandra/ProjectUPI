@@ -7043,7 +7043,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #85b4d0;
+  background-color: #85b4d0 !important;
 }
 
 .bg-transparent {
