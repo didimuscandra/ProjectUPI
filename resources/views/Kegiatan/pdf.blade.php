@@ -42,7 +42,7 @@
                             <td>{{ $kegiatan->tgl_mulai }}</td>
                             <td>{{ $kegiatan->tgl_selesai }}</td>
                             <td>{{ $kegiatan->tempat }}</td>
-                            <td>{{ $kegiatan->rencana_donasi }}</td>
+                            <td>@currency($kegiatan->rencana_donasi)</td>
                         </tr>
                     @endforeach
             </tbody>
